@@ -1,0 +1,10 @@
+.navigation {
+    background-color: brown;
+    font-size: 20px;
+    height: 70px;
+    margin-bottom: 20px;
+}
+.navitem {
+    padding-top: 3px;
+    text-decoration: none;
+}

@@ -1,0 +1,14 @@
+.cardheader {
+    text-align: center;
+}
+.cardbody {
+    text-align: center;
+    margin: auto;
+}
+.button {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.cardfooter {
+    text-align: center;
+}
