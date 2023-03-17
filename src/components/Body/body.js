@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import {Card,CardBody,CardHeader,CardFooter,Button} from 'reactstrap';
-import DisplayPhotos from './displayPhotos';
+import DisplayPhotos from './Display/displayPhotos';
 import './body.css';
 
 class Body extends Component {
