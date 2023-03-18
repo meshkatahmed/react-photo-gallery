@@ -1,7 +1,7 @@
 import { Component } from "react";
 import Feedbacks from '../Feedback/feedbacks';
 import FeedbackForm from "../Feedback/feedbackForm";
-import { Button, Modal,ModalBody,ModalFooter,ModalHeader } from "reactstrap";
+import { Button,Modal,ModalBody,ModalFooter,ModalHeader } from "reactstrap";
 import Loading from '../loading'
 import axios from 'axios';
 import './displayPhotos.css';
@@ -37,21 +37,21 @@ class DisplayPhotos extends Component {
     }
     render () {
         if (this.state.selectedImage != null) {
-            const callFeedbacks = this.state.feedbacks.map(
-                feedback => {
-                    if (feedback.imageId === this.state.selectedImage.id)
-                        return (
-                            <Feedbacks name={feedback.name} 
-                                rating={feedback.rating} 
-                                comment={feedback.comment}
-                                key={feedback.id}
-                            />
-                        );
-                } 
+            const imageFeedbacks = this.state.feedbacks.filter(
+                feedback => feedback.imageId === this.state.selectedImage.id
             );
+            const callFeedbacks = imageFeedbacks.map(imageFeedback => {
+                return (
+                    <Feedbacks name={imageFeedback.name} 
+                        rating={imageFeedback.rating} 
+                        comment={imageFeedback.feedback}
+                        key={imageFeedback.id}
+                    />
+                );
+            });
             return (
                 <div className="container">
-                    <Modal isOpen={this.state.isModalOpen} onClick={this.getFeedbacks}>
+                    <Modal isOpen={this.state.isModalOpen}  onClick={this.getFeedbacks}>
                         <ModalHeader>
                             <img style={{marginLeft:'100px',marginRight:'100px'}}
                                 src={this.state.selectedImage.link}
@@ -62,69 +62,78 @@ class DisplayPhotos extends Component {
                             {callFeedbacks}
                             <FeedbackForm 
                                 imageId={this.state.selectedImage.id}
-                                feedbacks={this.state.feedbacks}/>
+                                feedbacks={this.state.feedbacks}
+                            />
                         </ModalBody>
                         <ModalFooter>
                             <Button onClick={this.toggleModal}>Close</Button>
                         </ModalFooter>
                     </Modal>
                 </div>
-                
             );
         } else {
             if (this.state.images != null) {
                 switch(this.props.category) {
-                    case 'natural':
+                    case 'nature':
+                        const naturalImages = this.state.images.filter(
+                            image => this.props.category === image.category 
+                        );
+                        const callNaturalImages = naturalImages.map(image => {
+                            return (
+                                <img className="image col-4" src={image.link}
+                                    alt={image.category}
+                                    onClick={() => this.selectImage(image.id-1)}
+                                    key={image.id}
+                                />
+                            );
+                        });
                         return (
                             <div>
-                                <h5 className="message">Click on an image to give feedback</h5>
-                                <div className="d-flex">
-                                    <img className='image' 
-                                        src={this.state.images[0].link} 
-                                        alt={this.state.images[0].category}
-                                        onClick={()=>this.selectImage(0)}
-                                    />
-                                    <img className='image' 
-                                        src={this.state.images[1].link} 
-                                        alt={this.state.images[1].category}
-                                        onClick={()=>this.selectImage(1)}
-                                    />
+                                <h5 className="message">Click in the middle of an image to give feedback</h5>
+                                <div className="row">
+                                    {callNaturalImages}
                                 </div>
                             </div>   
                         );
                     case 'food':
+                        const foodImages = this.state.images.filter(
+                            image => this.props.category === image.category 
+                        );
+                        const callFoodImages = foodImages.map(image => {
+                            return (
+                                <img className="image col-4" src={image.link}
+                                    alt={image.category}
+                                    onClick={() => this.selectImage(image.id-1)}
+                                    key={image.id}
+                                />
+                            );
+                        });
                         return (
                             <div>
                                 <h5 className="message">Click on an image to give feedback</h5>
-                                <div className="d-flex">
-                                    <img className='image' 
-                                        src={this.state.images[2].link} 
-                                        alt={this.state.images[2].category}
-                                        onClick={()=>this.selectImage(2)}
-                                    />
-                                    <img className='image' 
-                                        src={this.state.images[3].link} 
-                                        alt={this.state.images[3].category}
-                                        onClick={()=>this.selectImage(3)}
-                                    />
+                                <div className="row">
+                                    {callFoodImages}
                                 </div>
                             </div>
                         );
                     case 'technology':
+                        const techImages = this.state.images.filter(
+                            image => this.props.category === image.category 
+                        );
+                        const callTechImages = techImages.map(image => {
+                            return (
+                                <img className="image col-4" src={image.link}
+                                    alt={image.category}
+                                    onClick={() => this.selectImage(image.id-1)}
+                                    key={image.id}
+                                />
+                            );
+                        });
                         return (
                             <div>
                                 <h5 className="message">Click on an image to give feedback</h5>
-                                <div className="d-flex">
-                                    <img className='image' 
-                                        src={this.state.images[4].link} 
-                                        alt={this.state.images[4].category}
-                                        onClick={()=>this.selectImage(4)}    
-                                    />
-                                    <img className='image' 
-                                        src={this.state.images[5].link} 
-                                        alt={this.state.images[5].category}
-                                        onClick={()=>this.selectImage(5)}    
-                                    />
+                                <div className="row">
+                                    {callTechImages}
                                 </div>
                             </div>
                         );

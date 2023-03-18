@@ -1,46 +1,19 @@
-import { Component } from 'react';
-import {Card,CardBody,CardHeader,CardFooter,Button} from 'reactstrap';
-import DisplayPhotos from './Display/displayPhotos';
-import './body.css';
+import Home from './Home/home';
+import Gallery from './Gallery/gallery';
+import Register from './Register/register';
+import {Switch,Route,Redirect} from 'react-router-dom';
 
-class Body extends Component {
-    state = {
-        category: null,
-        selected: false
-    }
-
-    showPhotos = category => {
-        this.setState(
-            {
-                category: category,
-                selected: true
-            }
-        )
-    }
-
-    render () {
-        if (!this.state.selected) {
-            return (
-                <div className='container'>
-                    <Card>
-                        <CardHeader className='cardheader' style={{backgroundColor:'brown',color:'aqua'}}>Select a Category</CardHeader>
-                        <CardBody className='cardbody'>
-                            <Button className='button btn-info' onClick={()=>this.showPhotos('natural')}>Natural</Button>
-                            <Button className='button btn-info' onClick={()=>this.showPhotos('food')}>Food</Button>
-                            <Button className='button btn-info' onClick={()=>this.showPhotos('technology')}>Technology</Button>
-                        </CardBody>
-                        <CardFooter className='cardfooter' style={{backgroundColor:'brown',color:'aqua'}}>Happy Browsing!!</CardFooter>
-                    </Card>
-                </div>
-            );
-        } else {
-            return (
-                <div className='container'>
-                    <DisplayPhotos category={this.state.category}/>
-                </div>
-            );
-        }
-    }
+const Body = () => {
+    return (
+        <div>
+            <Switch>
+                <Route path='/home' exact component={Home}/>   
+                <Route path='/register' exact component={Register}/>
+                <Route path='/gallery' exact component={Gallery}/>
+                <Redirect from='/' to='/home'/>
+            </Switch>
+        </div>
+    );
 }
 
 export default Body;

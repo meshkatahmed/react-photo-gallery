@@ -2,32 +2,92 @@
   "images": [
     {
       "id": 1,
-      "category": "natural",
-      "link": "Assets/images/Natural/1.jpg"
+      "category": "nature",
+      "link": "Assets/images/Nature/1.jpg"
     },
     {
       "id": 2,
-      "category": "natural",
-      "link": "Assets/images/Natural/2.jpg"
+      "category": "nature",
+      "link": "Assets/images/Nature/2.jpg"
     },
     {
       "id": 3,
+      "category": "nature",
+      "link": "Assets/images/Nature/3.jpg"
+    },
+    {
+      "id": 4,
+      "category": "nature",
+      "link": "Assets/images/Nature/4.jpg"
+    },
+    {
+      "id": 5,
+      "category": "nature",
+      "link": "Assets/images/Nature/5.jpg"
+    },
+    {
+      "id": 6,
+      "category": "nature",
+      "link": "Assets/images/Nature/6.jpg"
+    },
+    {
+      "id": 7,
+      "category": "food",
+      "link": "Assets/images/Food/1.jpg"
+    },
+    {
+      "id": 8,
+      "category": "food",
+      "link": "Assets/images/Food/2.jpg"
+    },
+    {
+      "id": 9,
       "category": "food",
       "link": "Assets/images/Food/3.jpg"
     },
     {
-      "id": 4,
+      "id": 10,
       "category": "food",
       "link": "Assets/images/Food/4.jpg"
     },
     {
-      "id": 5,
+      "id": 11,
+      "category": "food",
+      "link": "Assets/images/Food/5.jpg"
+    },
+    {
+      "id": 12,
+      "category": "food",
+      "link": "Assets/images/Food/6.jpg"
+    },
+    {
+      "id": 13,
+      "category": "technology",
+      "link": "Assets/images/Technology/1.jpg"
+    },
+    {
+      "id": 14,
+      "category": "technology",
+      "link": "Assets/images/Technology/2.jpg"
+    },
+    {
+      "id": 15,
+      "category": "technology",
+      "link": "Assets/images/Technology/3.jpg"
+    },
+    {
+      "id": 16,
+      "category": "technology",
+      "link": "Assets/images/Technology/4.jpg"
+    },
+    {
+      "id": 17,
       "category": "technology",
       "link": "Assets/images/Technology/5.jpg"
     },
     {
-      "id": 6,
-      "category": "tech",
+      "id": 18,
+      "category": "technology",
       "link": "Assets/images/Technology/6.jpg"
     }
   ],
@@ -52,6 +112,69 @@
       "rating": "4",
       "feedback": "Just wow!!",
       "id": 3
+    },
+    {
+      "imageId": 3,
+      "name": "Essam Ul haque",
+      "rating": "5",
+      "feedback": "Delicious!",
+      "id": 4
+    },
+    {
+      "imageId": 4,
+      "name": "Meshkat Uddin Ahammed",
+      "rating": "3",
+      "feedback": "Tasty but fatty!!",
+      "id": 5
+    },
+    {
+      "imageId": 5,
+      "name": "Meshkat Uddin Ahammed",
+      "rating": "5",
+      "feedback": "Critical circuit!",
+      "id": 6
+    },
+    {
+      "imageId": 5,
+      "name": "Essam Ul haque",
+      "rating": "",
+      "feedback": "Amazing!",
+      "id": 7
+    },
+    {
+      "imageId": 6,
+      "name": "Meshkat Uddin Ahammed",
+      "rating": "5",
+      "feedback": "Smart!",
+      "id": 8
+    },
+    {
+      "imageId": 6,
+      "name": "Essam Ul haque",
+      "rating": "5",
+      "feedback": "Not so smart!",
+      "id": 9
+    },
+    {
+      "imageId": 2,
+      "name": "Essam Ul haque",
+      "rating": "4",
+      "feedback": "Wet with rain bridge!",
+      "id": 10
+    },
+    {
+      "imageId": 16,
+      "name": "Essam Ul haque",
+      "rating": "4",
+      "feedback": "Nice!!",
+      "id": 11
+    },
+    {
+      "imageId": 17,
+      "name": "Meshkat Uddin Ahammed",
+      "rating": "5",
+      "feedback": "Best laptop of all time!",
+      "id": 12
     }
   ]
 }
